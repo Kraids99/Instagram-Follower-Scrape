@@ -1,4 +1,4 @@
-# AUTO UNFOLLOW WHO NOT FOLLBACK
+# Auto Unfollow Non-Followers
 Script dipakai untuk unfollow orang yang tidak follback kamu secara otomatis (limit 10 akun)
 
 # ❗❗ WARNING ❗❗
