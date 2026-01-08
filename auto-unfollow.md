@@ -186,7 +186,7 @@ async function ReadFollowersAndFollowing() {
 
 /* ===== !! WARNING !! ===== */
 
-async function AutoUnfollowNotFollowingBack(data) {
+async function AutoUnfollow(data) {
 
     var listUsername = data.notFollowingYouBack;
     var wait = data.wait;
@@ -207,7 +207,7 @@ async function AutoUnfollowNotFollowingBack(data) {
         return null;
     }
 
-    async function findRowWithScroll(username) {
+    async function scrollRow(username) {
         var scrollBox = document.querySelector('div.x1rife3k');
         var lastCount = 0;
         var same = 0;
@@ -260,7 +260,7 @@ async function AutoUnfollowNotFollowingBack(data) {
 
     for (var i = 0; i < listUsername.length && done < limit; i++) {
 
-        var row = await findRowWithScroll(listUsername[i]);
+        var row = await scrollRow(listUsername[i]);
         if (!row) continue;
 
         if (!clickFollowing(row)) continue;
@@ -279,5 +279,5 @@ async function AutoUnfollowNotFollowingBack(data) {
 
 const data = await ReadFollowersAndFollowing();
 
-await AutoUnfollowNotFollowingBack(data);
+await AutoUnfollow(data);
 ```
